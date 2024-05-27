@@ -1,0 +1,32 @@
+\textbf{11.43} Refer to exercises 11.5 and 11.17. Use the data and model given there to construct a 95\% prediction interval for the median sale price in 1980.
+
+\begin{center}
+    \begin{tabular}{lc}
+         \hline
+         Year & Median Sales Price ($\times 1000$)\\
+         \hline
+         1972 (1) & \$27.60 \\
+         1973 (2) & \$32.50 \\
+         1974 (3) & \$35.90 \\
+         1975 (4) & \$39.30 \\
+         1976 (5) & \$44.20 \\
+         1977 (6) & \$48.80 \\
+         1978 (7) & \$55.70 \\
+         1979 (8) & \$62.90 \\
+         \hline
+    \end{tabular}
+\end{center}
+
+\nl The summary shows that our equation is $\yhat = 4841.7x + 21575$
+
+\nl $S=1746 \implies S^2 = 1746^2 = 3048516$. Then $\operatorname{SSE} = (n-2)S^2 = 6 \times 3048516 = 18291096$
+
+\soln* With $\operatorname{df} = n - 2 = 6$, the $t$-value is $t_{0.025,\;6} = 2.447$. Note $\sum x_i = 36, \; \sum {x_i}^2, \; \xbar = 4.5$.
+It follows that $\displaystyle S_{xx} = \sum {x_i}^2 - \frac{(\sum x_i)^2}{n} = 204 - \frac{36^2}{8} = 42 $
+
+\nl To find a prediction interval for 1980 ($x^{\ast} = 9$). Then,
+\begin{align*}
+    & \bat_0 + \bat_1 \xstar \pm t_{\alpha / 2} S \sqrt{1 + \over n + \frac{(\xstar - \xbar)^2}{S_{xx}} }\\
+&= 21575 + 4841.7 \cdot 9 \pm 2.447 \cdot 1746 \sqrt{1 + \over 8 + \frac{4.5^2}{42}}\\
+&= (\$ 59733.97, \; \$ 70566.63) 
+\end{align*}

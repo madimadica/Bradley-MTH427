@@ -1,0 +1,7 @@
+What test can be used to assess whether the mean change in BMI over 6 years is
+different between women who quit smoking and women who have never smoked? Specify
+the hypotheses.
+
+\soln* A two sample t-test, pooled (as the following R code shows the variances are equal, since the p-value is large). $H_0 : \mu_1 = \mu_2$ vs $H_a : \mu_1 \neq \mu_2$, where $\mu_1$ is the mean difference of the baseline group, and $\mu_2$ is the mean difference of the smokers.
+
+\nl \includegraphics*[width=4in]{img/2_1d_console.PNG}

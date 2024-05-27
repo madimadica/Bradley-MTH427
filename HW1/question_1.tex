@@ -1,0 +1,14 @@
+For any random variables $X$, $Y$ and any constants $a, b, c$ and $d$,
+\\show that $\Cov(a+bX, c+dY) = bd \Cov(X,Y)$.
+
+\begin{proof}
+    \begin{align*}
+        \Cov(a+bX, c+dY) &= \Eb{(a+bX)(c+dY)} - \Eb{a+bX}\Eb{c+dY}\\
+        &= \Eb{ac+adY+bcX+bdXY} - \pars{\Eb{a}+\Eb{bX}}\pars{\Eb{c}+\Eb{dY} }\\
+        &= ac + ad\Eb{Y} + bc\Eb{X} + bd\Eb{XY} - \pars{a + b\Eb{X}}\pars{c + d\Eb{Y}}\\
+        &= ac + ad\Eb{Y} + bc\Eb{X} + bd\Eb{XY} - \pars{ac + ad\Eb{Y} + bc\Eb{X} + bd\Eb{X}\Eb{Y}}\\
+        &= bd\Eb{XY} - bd\Eb{X}\Eb{Y} \tag{\say{Lots of killing} - McAsey}\\
+        &= bd\pars{\Eb{XY} - \Eb{X}\Eb{Y}}\\
+        &= bd \Cov(X,Y)
+    \end{align*}
+\end{proof}

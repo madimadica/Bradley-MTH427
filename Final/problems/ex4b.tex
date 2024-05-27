@@ -1,0 +1,13 @@
+$\ARIMA(1,1,1) \times (0,1,1)_{12}$ or $\SARIMA(1,1,1) \times (0,1,1)_{12}$ (notation from other text books).
+
+\nl $p=1,\; d=1, \; q =1,\; P = 0, \; D=1,\; Q=1,\; S=12$.
+
+Using the model $$\Phi_P(B^s) \phi_p(B)(1-B^s)^D(1-B)^d x_t = \Theta_Q(B^s)\theta_q(B) w_t$$
+with 
+$$\Phi_P(B^s) = 1, \quad \phi_p(B) = (1-\phi_1B), \quad \Theta_Q(B^s) = (1+\Theta_1 B^{12}), \quad \theta_q(B) = (1+\theta_1 B)$$
+gives
+$$1(1-\phi_1B)(1-B^{12})^1(1-B)^1x_t =  (1+\Theta_1 B^{12})  (1+\theta_1 B) w_t.$$
+Distributing yields 
+$$(1-B-B^{12}+B^{13}-\phi_1B + \phi_1 B^2 + \phi_1 B^{13} - \phi_1 B^{14})x_t = (1 + B\theta_1 + \Theta_1 B^{12} + \theta_1 \Theta_1 B^{13})w_t.$$
+Writing as a difference equation it becomes
+$$x_t - (1+\phi_1)x_{t-1} + \phi_1 x_{t-2} - x_{t-12} + (1+\phi_1)x_{t-13} - \phi_1 x_{t-14} = w_t + \theta_1 w_{t-1} + \Theta_1 w_{t-12} + \theta_1\Theta_1 w_{t-13}.$$

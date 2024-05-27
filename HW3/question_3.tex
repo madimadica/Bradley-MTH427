@@ -1,0 +1,62 @@
+Refer to exercise 11.3. Fit the model suggested there by use of matrices. 
+
+\soln*
+\begin{center}
+    \begin{tabular}{l|ccccc}
+         y & 3 & 2 & 1 & 1 & 0.5\\
+         \hline
+         x & -2 & -1 & 0 & 1 & 2\\
+    \end{tabular}
+\end{center}
+
+$$
+X = \begin{bmatrix}
+	1 & -2\\
+	1 & -1\\
+	1 & 0\\
+	1 & 1\\
+	1 & 2\\
+\end{bmatrix}
+, \quad X^T =
+\begin{bmatrix}
+	1 & 1 & 1 & 1 & 1\\
+	-2 & -1 & 0 & 1 & 2\\
+\end{bmatrix}
+, \quad Y=
+\begin{bmatrix}
+	3\\
+	2\\
+	1\\
+	1\\
+	0.5\\
+\end{bmatrix}
+$$
+$$
+X^TX = \begin{bmatrix}
+	5 & 0\\
+	0 & 10\\
+\end{bmatrix}, \qquad (X^TX)^{-1} = \begin{bmatrix}
+	\frac15 & 0\\
+	0 & \frac{1}{10}\\
+\end{bmatrix}
+$$
+$$
+X^TY = \begin{bmatrix}
+	7.5\\
+	-6\\
+\end{bmatrix}
+$$
+$$
+\bat = (X^TX)^{-1}\cdot X^TY = \begin{bmatrix}
+	\frac15 & 0\\
+	0 & \frac{1}{10}\\
+\end{bmatrix}
+\begin{bmatrix}
+	7.5\\
+	-6\\
+\end{bmatrix} = \begin{bmatrix}
+	1.5\\
+	-0.6\\
+\end{bmatrix}
+$$
+$$\therefore \yhat = -0.6x + 1.5$$

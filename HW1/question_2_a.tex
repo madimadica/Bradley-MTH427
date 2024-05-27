@@ -1,0 +1,11 @@
+Show that $\that_3$ is an unbiased estimator for $\theta$.
+
+\begin{proof}
+    \begin{align*}
+        \Eb*{\that_3} &= \Eb*{\alpha \that_1 + (1-\alpha)\that_2} \tag{given}\\
+        &= \alpha \Eb*{\that_1} + (1-\alpha)\Eb*{\that_2} \tag{linearity}\\
+        &= \alpha \theta + (1-\alpha) \theta \tag{substitute with hypotheses}\\
+        &= \theta \pars{\alpha + 1 - \alpha} \tag{factor}\\
+        &= \theta \tag{simplify}
+    \end{align*}
+\end{proof}

@@ -1,0 +1,14 @@
+$x_t = w_t - 0.7w_{t-1} \qquad \qquad \phi(z) = 1 \qquad \theta(z) = 1 - 0.7z$
+
+\begin{align*}
+    & \pi_0 + \pi_1 z + \pi_2 z^2 + \pi_3 z^3 + \cdots =\frac{\phi(z)}{\theta(z)} = \frac{1}{1-0.7z}\\
+\iff & (1-0.7z)(\pi_0 + \pi_1 z + \pi_2 z^2 + \pi_3 z^3 + \cdots) = 1\\
+\iff & \pi_0 + \pi_1 z + \pi_2 z^2 + \pi_3 z^3 + \cdots -0.7 \pi_0z - 0.7 \pi_1 z^2 -0.7 \pi_2 z^3 - 0.7 \pi_3 z^4 + \cdots = 1
+\end{align*}
+
+$$\begin{cases}
+    \pi_0 = 1 & \implies \pi_0 = 1\\
+    \pi_1z -0.7 (1) z = 0 & \implies \pi_1 = 0.7\\
+    \pi_2 z^2 - 0.7 (0.7)z^2 = 0 & \implies \pi_2 = 0.49\\
+    \pi_3 z^3 - 0.7 (0.49)z^3 = 0 & \implies \pi_3 = 0.343
+\end{cases}$$

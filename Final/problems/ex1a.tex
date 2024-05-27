@@ -1,0 +1,8 @@
+$x_t = -0.3x_{t-1} + w_t - 0.4w_{t-1} - 0.21w_{t-2}$
+
+$$(1+0.3B)x_t = (1-0.4B-0.21B^2)w_t$$
+$$\cancel{(1+0.3z)} = \cancel{(1+0.3z)}(1-0.7z)$$
+$$\underbrace{1}_{\phi(z)} = \underbrace{1-0.7z}_{\theta(z)}$$
+$$x_t = w_t - 0.7w_{t-1} \quad \implies \quad \ARMA(0,1)$$
+Since $\phi(z) = 1$ has no roots, the model is causal.\\
+Since $\theta(z)$ has one root, $-\frac{10}{3}$, and $\abs{-\frac{10}{3}} > 1$, the model is invertible.

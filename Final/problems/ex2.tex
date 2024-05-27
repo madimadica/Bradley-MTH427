@@ -1,0 +1,26 @@
+Suppose $x_t = w_t - w_{t-4}$, where $w_t$ is a Gaussian white noise $W \sim N (0, \sigma^2_w)$. Find the
+mean and the autocovariance function (ACVF) of this series. Show that its autocorrelation
+function is nonzero only for lag $h = 4. (h \geq 1)$.
+
+\soln
+
+\nl The mean is zero, $\Eb{x_t} = \Eb{w_t - w_{t-4}} = \Eb{w_t} - \Eb{w_{t-4}} = 0 - 0 = 0$.
+
+\nl The ACVF is 
+\begin{align*}
+    \Cov(w_t, w_{t+h}) &= \Cov(w_t - w_{t-4},\; w_{t+h} - w_{t+h-4})\\
+    &= \underbrace{\Cov(w_t, w_{t+h})}_{\substack{\sigma^2_w \text{ when } h=0\\0 \text{ else}}}
+     - \underbrace{\Cov(w_t, w_{t+h-4})}_{\substack{\sigma^2_w \text{ when } h=4\\0 \text{ else}}}
+     - \underbrace{\Cov(w_{t-4}, w_{t+h})}_{\text{always 0}}
+    + \underbrace{\Cov(w_{t-4}, w_{t+h-4})}_{\substack{\sigma^2_w \text{ when } h=0\\0 \text{ else}}}
+\end{align*}
+
+\noindent Since $\Cov(w_a, w_b)$ is zero for $a \neq b$ and $\sigma^2_w$ for $a = b$.
+
+\nl Restricting to $h \geq 1$ means that 
+$$\text{ACVF} = \begin{cases}
+    - \sigma^2_w & h = 4\\
+    0 & h \neq 4
+\end{cases} \qquad h \geq 1$$
+
+\nl Therefore the autocorrelation function is only nonzero at lag $h=4$.

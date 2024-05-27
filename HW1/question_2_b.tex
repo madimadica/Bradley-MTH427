@@ -1,0 +1,12 @@
+If $\that_1$ and $\that_2$ are independent, how should $\alpha$ be chosen in order to minimize the variance of $\that_3$?
+
+\soln* First derive the general form of the variance of the estimator $\that_3$. That is, 
+\begin{align*}
+    \Varb*{\that_3} &= \Varb*{\alpha \that_1 + (1-\alpha)\that_2} \tag{substitute}\\
+    &= \alpha^2 \Varb*{\that_1} + (1-\alpha)^2 \Varb*{\that_2} + 2\alpha(1-\alpha) \Cov(\that_1, \that_2) \tag{formula}\\
+    &= \alpha^2 \Varb*{\that_1} + (1-\alpha)^2 \Varb*{\that_2} \tag{By independence hypothesis}\\
+    &= \alpha^2 {\sigma_1}^2 + (1-\alpha)^2 {\sigma_2}^2 \tag{substitute}
+\end{align*}
+Using the first derivative test wrt $\alpha$, 
+$\displaystyle \pdv{\alpha} \pars{\alpha^2 {\sigma_1}^2 + (1-\alpha)^2 {\sigma_2}^2} = 2\alpha({\sigma_1}^2 + {\sigma_2}^2) + 2{\sigma_2}^2$. Setting this equal to 0 and solving for $\alpha$ yields 
+$\alpha = \dfrac{{\sigma_2}^2}{{\sigma_1}^2+{\sigma_2}^2}$.

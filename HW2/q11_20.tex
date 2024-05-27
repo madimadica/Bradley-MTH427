@@ -1,0 +1,39 @@
+Suppose that $Y_1, Y_2, \ldots, Y_n$ are independent normal random variables with $\E{Y_i} = \beta_0 + \beta_1 x_i$ and $\Var{Y_i} = \sigma^2$, for $i = 1, 2, \ldots, n$. Show that the maximum-likelihood estimators (MLEs) of $\beta_0$ and $\beta_1$ are the same as the least-squares estimators of section 11.3
+
+\soln*
+$$f(y_i) = \over{\sqrt{2\pi} \sigma} \cdot \exp{-\over{2\sigma^2} (y_i - \beta_0 - \beta_1 x_i)^2}$$
+\begin{align*}
+    L(Y_1, \ldots, Y_n \mid \beta_0, \beta_1) &= \prod_{i=1}^n \over{\sqrt{2\pi} \sigma} \cdot \exp{-\over{2\sigma^2} (y_i - \beta_0 - \beta_1 x_i)^2}
+    \\ &= \pover{\sqrt{2\pi} \sigma}^n \prod_{i=1}^n  \cdot \exp{-\over{2\sigma^2} (y_i - \beta_0 - \beta_1 x_i)^2}
+    \\ &= \pover{\sqrt{2\pi} \sigma}^n \cdot \exp{-\over{2\sigma^2} \sum_{i=1}^n  (y_i - \beta_0 - \beta_1 x_i)^2}\\
+\end{align*}
+\begin{align*}
+l(Y_1, \ldots, Y_n \mid \beta_0, \beta_1) &= \ln \brac{\pover{\sqrt{2\pi} \sigma}^n \cdot \exp{-\over{2\sigma^2} \sum_{i=1}^n  (y_i - \beta_0 - \beta_1 x_i)^2}} \\
+    &= \ln \pars{\pover{\sqrt{2\pi} \sigma}^n} + \ln \pars{\exp{-\over{2\sigma^2} \sum_{i=1}^n  (y_i - \beta_0 - \beta_1 x_i)^2}} \\
+    &= n \ln \pover{\sqrt{2\pi} \sigma}  -\over{2\sigma^2} \sum_{i=1}^n  (y_i - \beta_0 - \beta_1 x_i)^2
+\end{align*}
+Then $$\pdv{l}{\beta_0} = -\over{\sigma^2} \sum_{i=1}^n  (y_i - \beta_0 - \beta_1 x_i) = 0 \implies -n\beta_0 + \sum_{i=1}^n y_i - \beta_1 \sum_{i=1}^n x_i = 0$$
+So $\sum_{i=1}^n y_i = n\beta_0 + \beta_1 \sum_{i=1}^n x_i$. Solving for $\beta_0$,
+\begin{align*}
+    \sum_{i=1}^n y_i &= n\beta_0 + \beta_1 \sum_{i=1}^n x_i \\
+    n\beta_0 &= \sum_{i=1}^n y_i - \beta_1 \sum_{i=1}^n x_i\\
+    \beta_0 &= \ybar - \beta_1 \xbar
+\end{align*}
+
+\nnl Next $$\pdv{l}{\beta_1} = -\over{\sigma^2} \sum_{i=1}^n  \pars{x_i(y_i - \beta_0 - \beta_1 x_i)} = 0$$
+So $\sum_{i=1}^n x_i y_i = \beta_0 \sum_{i=1}^n x_i + \beta_1 \sum_{i=1}^n x_i^2$
+
+Now solving for $\beta_1$, 
+\begin{align*}
+    \sum x_i y_i &= \beta_0 \sum x_i + \beta_1 \sum x_i^2\\
+    \beta_1 &= \frac{\sum x_i y_i - \beta_0 \sum x_i }{ \sum x_i^2} \\
+    &= \frac{\sum x_i y_i -  \blue{\pars{ \ybar - \beta_1 \xbar}} \sum x_i }{ \sum x_i^2}\\
+    &=  \frac{\sum x_i y_i -  \ybar \sum x_i + \beta_1 \xbar \sum x_i }{ \sum x_i^2}\\
+    \beta_1 - \frac{\beta_1 \xbar \sum x_i}{ \sum x_i^2} &= \frac{\sum x_i y_i -  \ybar \sum x_i}{ \sum x_i^2}\\
+    \beta_1 \pars{ \frac{\sum x_i^2 - \xbar \sum x_i}{\sum x_i^2} } &= \frac{\sum x_i y_i -  \ybar \sum x_i}{ \sum x_i^2}\\
+    \beta_1 &= \frac{\sum x_i y_i -  \ybar \sum x_i}{ \sum x_i^2 - \xbar \sum x_i}\\
+    &= \frac{\sum x_i y_i - \over{n} \sum y_i \sum x_i}{ \sum x_i^2 - \over{n} (\sum x_i)^2}\\
+    &= \frac{S_{xy}}{S_{xx}}
+\end{align*}
+
+\nnl Which is the same as the least-squares method achieved.

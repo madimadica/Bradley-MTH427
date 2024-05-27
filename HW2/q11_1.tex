@@ -1,0 +1,7 @@
+If $\bat_0$ and $\bat_1$ are the least-squares estimates for the intercept and slope in a simple linear regression model, show that the least-squares equation $\yhat = \bat_0 + \bat_1 x$ always goes through the point $(\xbar, \ybar)$. [\textit{Hint:} substitute $\xbar$ for $x$ in the least squares equation and use the fact that $\bat_0 = \ybar - \bat_1 \xbar$.]
+
+\begin{proof}
+Following the hint, $\yhat(\xbar) = \blue{\bat_0} + \bat_1 \xbar$. But also by the hint, $\bat_0 = \ybar - \bat_1 \xbar$, so substituting in for $\blue{\bat_0}$ gives 
+$$\yhat(\xbar) = \blue{\ybar - \bat_1 \xbar} + \bat_1 \xbar = \ybar$$
+Hence the point $(\xbar, \ybar)$ is a solution to the least-squares equation for any $\bat_0, \bat_1$.
+\end{proof} 

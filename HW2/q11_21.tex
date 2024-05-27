@@ -1,0 +1,14 @@
+Under the assumptions of Exercise 11.20, find $\Cov(\bat_0, \bat_1)$. Use this answer to show that $\bat_0$ and $\bat_1$ are independent if $\sum_{i=1}^n x_i = 0$. [\textit{Hint:} $\Cov(\bat_0, \bat_1) = \Cov(\Ybar - \bat_1 \xbar, \, \bat_1)$. Use Theorem 5.12 and the results of this section.]
+
+\soln* $ $
+\begin{align*}
+    \Cov(\bat_0, \bat_1) &= \Cov(\Ybar - \bat_1 \xbar, \bat_1) \tag{using the hint}\\
+    &= \Cov(\Ybar, \bat_1) + \Cov(- \bat_1 \xbar, \bat_1) \tag{separate sum}\\
+    &= \underbrace{\Cov(\Ybar, \bat_1)}_{0} + \Cov(- \bat_1 \xbar, \bat_1) \tag{by Theorem 5.12 and page 579}\\
+    &= \Cov(- \bat_1 \xbar,\; \bat_1) \\
+    &= \Cov \pars{-\bat_1 \cdot \over{n} \sum_{i=1}^n x_i,\; \bat_1} \tag{definition of $\xbar$}\\
+    &= \Cov \pars{-\bat_1 \cdot \over{n} \cdot 0,\; \bat_1} \tag{by hypothesis}\\
+    &= \Cov(0, \bat_1)\\
+    &= 0 \tag{by Covariance of a constant}
+\end{align*}
+Therefore $\bat_0$ and $\bat_1$ are independent since their Covariance equals zero.

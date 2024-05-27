@@ -1,0 +1,10 @@
+$x_t = 0.5x_{t-1} + 0.5x_{t-2} + w_t - w_{t-1}$
+
+$$(1-0.5B-0.5B^2)x_t = (1-B)w_t$$
+$$(1-0.5z-0.5z^2) = (1-z)$$
+$$(1+0.5z)\cancel{(1-z)} = \cancel{(1-z)}$$
+$$\underbrace{1+0.5z}_{\phi(z)}= \underbrace{1}_{\theta(z)}$$
+$$x_t + 0.5x_{t-1} = w_t \quad \implies \quad \ARMA(1,0)$$
+
+\noindent Since $\phi(z)$ only has root $2$ and $2 > 1$, the model is causal.
+\\Since $\theta(z)$ has no roots, the model is invertible.

@@ -1,0 +1,16 @@
+\begin{enumerate}[label=\textbf{\alph*}]
+    \item Calculate $SSE$ and $S^2$ for Exercise 1.5.
+
+    \soln* According to the R summary, the residual error is 1.746 so 
+    \\$S^2 = 1746^2 = 3048516$. Then $\operatorname{SSE} = (n-2)S^2 = 6 \times 3048516 = 18291096$.
+
+    \item It is sometimes convenient, for computational purposes, to have $x$-values spaces symmetrically and equally about zero. The $x$-values can be rescaled (or coded) in any convenient manner, with no loss of information in the statistical analysis. Refer to Exercise 1.5. Code the $x$-values (originally given on a scale of 1 to 8) by using the formula $$x^{\ast} = \frac{x-4.5}{0.5}.$$ Then fit the model $Y = \bat_0^{\ast} + \bat_1^{\ast} x^{\ast} + \varepsilon$. Calculate SSE. (Notice that the $x^{\ast}$-values are integers symmetrically spaced about zero.) Compare the SSE with the value obtained in part (a).
+
+    \soln* Using R to compute a new summary, 
+
+    \nl \includegraphics*[width=4.5in]{img/11_17_rb.PNG}
+
+    Our equation is now $Y = 43362.5 + 2420.8x$.
+    Then the residual error is 1.746 so 
+    \\$S^2 = 1746^2 = 3048516$. Then $\operatorname{SSE} = (n-2)S^2 = 6 \times 3048516 = 18291096$. This is the same as (a), which makes sense since translating and dialating the plot along the x-values doesn't change the residual size for each data point, which determines SSE.
+\end{enumerate}

@@ -1,0 +1,36 @@
+Suppose that $X_1, X_2, X_3$ denote a random sample from an exponential distribution with density function 
+$$f(x) = \begin{cases} 
+    \pover{\theta}\exp(-x/\theta) & x>0 \\
+    0 & \text{elsewhere} 
+ \end{cases}$$
+consider the following four estimators of $\theta$:
+$$\that_1 = X_1, \qquad \that_2 = \frac{X_1 + 2X_2}{3}, \qquad \that_3 = \Xbar, \qquad \that_4 = \min{X_1, X_2, X_3}$$
+Which of these estimators are unbiased? (Show your work.)
+
+\soln* Start by computing the expected value of the distribution of $X$, 
+\begin{align*}
+    \Eb{X} &= \int_{-\infty}^{\infty} xf(x) \dd x \\
+    &= \over{\theta}\int_{-\infty}^{\infty} xe^{-x/\theta} \dd x\\
+    &=  \over{\theta}\int_{0}^{\infty} xe^{-x/\theta} \dd x\\
+    \text{Let } u=x,& \quad \dd u = \dd x, \quad \dd v = e^{-x/\theta}\dd x,\quad v = -\theta e^{-x/\theta}\\
+    &= \over{\theta} \pars{x(-\theta e^{-x/\theta}) - \int -\theta e^{-x/\theta} \dd x} \bigg|_{0}^{\infty}\\
+    &= \over{\theta} \pars{x(-\theta e^{-x/\theta}) + \theta \int  e^{-x/\theta} \dd x} \bigg|_{0}^{\infty} \\
+    &=  \over{\theta} \pars{ x(-\theta e^{-x/\theta}) - \theta(\theta e^{-x/\theta})} \bigg|_{0}^{\infty}\\
+    &= - e^{-x/\theta}(x+\theta) \bigg|_{0}^{\infty}\\
+    &= - \pars{\limx e^{-x/\theta} (x+\theta) - e^{0}(0+\theta)}\\
+    &= - \pars{\limx \frac{x}{e^{x/\theta}} + \theta \limx e^{-x/\theta} - \theta}\\
+    &= - \pars{\limx \frac{1}{\over{\theta} e^{x/\theta}} - \theta}\\
+    &= -(-\theta)\\
+    &= \theta
+\end{align*}
+
+\begin{enumerate}[label=$\that_\arabic*$]
+    \item \soln* $\Eb*{\that_1} = \Eb*{X_1} = \Eb*{X} = \theta \therefore$ unbiased.
+    \item \soln* $\Eb*{\that_2} = \Eb{ \dfrac{X_1 + 2X_2}{3}} = \over*{3}\Eb*{X_1 + 2X_3} = \over*{3}\Eb*{3X} = \dfrac{3\theta}{3} = \theta \therefore$ unbiased.
+    \item \soln* $\Eb*{\that_3} = \Eb*{\Xbar} = \Eb{\over*{n}\displaystyle \sum_{i=1}^n X_i} = \over*{n} \displaystyle \sum_{i=1}^n \Eb{X} = \dfrac{n\theta}{n} = \theta \therefore$ unbiased.
+    \item \soln* Let $T := \min{X_1, X_2, X_3} = \that_4$. Then for some $t$,
+    \begin{align*}
+        \P{T > t} &= \prod_{i=1}^{3} \P{X_i > t} \\ &= \P{X > t}^3 \\ &= \brac{e^{-t/\theta}}^3 \\ &= e^{-3t/\theta}
+    \end{align*}
+    Then the CDF $F(t) = \P{T \leq t} = 1 - e^{-3t/\theta}$. Hence the PDF $f(t) = F'(T) = \frac{3}{\theta}e^{-3t/\theta}$. Then $\Eb*{\that_3} = \Eb*{f(t)} = \Eb{ \frac{3}{\theta}e^{-3t/\theta}} = \frac{\theta}{3} \neq \theta \therefore$ biased.
+\end{enumerate}

@@ -1,0 +1,14 @@
+In both cases, $H_0 : \bat_1 = 0$ vs $H_a : \bat_1 \neq 0$ with $\alpha = 0.05$.
+\begin{enumerate}[label=]
+    \item \textbf{Small} $$S^2 = \frac{\operatorname{SSE}}{n-2} = \frac{2.04}{29} = 0.070345 \implies S = 0.26523$$
+    $$\Var*{\bat_1} = c_{1\,1}S^2 = (0.0202)^2 = c_{1\,1} \cdot 0.070345 \implies c_{1\,1} = 0.0058$$
+    Computing the test statistic, 
+    $$T = \frac{\bat_1 - 0}{S\sqrt{c_{1\,1}}} = \frac{0.155}{0.26523 \sqrt{0.0058}} = 7.674$$
+    Using the stat tables, $t_{0.025,\,29} = 2.045$, hence we are in the rejection region and the slope is nonzero.
+    \item \textbf{Large} $$S^2 = \frac{\operatorname{SSE}}{n-2} = \frac{1.86}{9} = 0.20667 \implies S = 0.4546$$
+    $$\Var*{\bat_1} = c_{1\,1}S^2 = (0.0193)^2 = c_{1\,1} \cdot 0.20667 \implies c_{1\,1} = 0.0018$$
+    Computing the test statistic, 
+    $$T = \frac{\bat_1 - 0}{S\sqrt{c_{1\,1}}} = \frac{0.190}{ 0.4546 \sqrt{0.0018}} = 9.851$$
+    Using the stat tables, $t_{0.025,\,9} = 2.262$, hence we are in the rejection region and the slope is nonzero.
+\end{enumerate}
+Thus both slopes are significantly far different than 0.

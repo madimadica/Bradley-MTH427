@@ -1,0 +1,16 @@
+Plot this series. Plot a sample \textbf{acf} and the sample \textbf{pacf} for this series.
+
+\notab{
+    \center{
+        \includegraphics[width=6.75in]{img/6a.PNG}
+    }
+}
+
+Using the following R code:
+\begin{verbatim}
+    library(itsmr)
+    par(mfrow = c(3,1))
+    plot(lake)
+    acf(lake)
+    pacf(lake)
+\end{verbatim}
